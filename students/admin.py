@@ -7,8 +7,11 @@ from .models import Student, Group, MonthJournal
 
 
 class StudentFormAdmin(ModelForm):
+    print '=== StudentFormAdmin ==== '
 
     def clean_student_group(self):
+        print '=== clean_student_group ==== '
+        
         """Check if student is leader in any group.
 
         If yes, then ensure it's the same as selected group."""
