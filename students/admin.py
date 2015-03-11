@@ -8,8 +8,10 @@ from .models import Student, Group, MonthJournal
 
 class StudentFormAdmin(ModelForm):
     print '=== StudentFormAdmin ==== '
+    # import pdb;pdb.set_trace()
 
     def clean_student_group(self):
+        import pdb;pdb.set_trace()
         print '=== clean_student_group ==== '
         
         """Check if student is leader in any group.
@@ -25,6 +27,7 @@ class StudentFormAdmin(ModelForm):
         return self.cleaned_data['student_group']
 
 class StudentAdmin(admin.ModelAdmin):
+    # import pdb;pdb.set_trace()
     list_display = ['last_name', 'first_name', 'ticket', 'student_group']
     list_display_links = ['last_name', 'first_name']
     list_editable = ['student_group']

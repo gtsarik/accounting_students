@@ -9,11 +9,11 @@ from students.models import Student
 def absoluteUrl(request):
     '''Returns absolute site root '''
 
-    separ = os.sep
-    domen_url_list = request.build_absolute_uri().split(separ)
-    domen_url = domen_url_list[0] + separ + separ + domen_url_list[2]
+    # separ = os.sep
+    # domen_url_list = request.build_absolute_uri().split(separ)
+    # domen_url = domen_url_list[0] + separ + separ + domen_url_list[2]
 
-    return {'DOMEN_URL': domen_url}
+    return {'DOMEN_URL': PORTAL_URL}
 
 def pagePathTrue(request):
     on_homepage = False
