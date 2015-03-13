@@ -132,7 +132,15 @@ function initCreateStudentForm(form, modal) {
 
     'beforeSend': function(xhr, settings){
         // indicator.show();
-        alert('GO!');
+        $("#submit-id-add_button").prop("disabled", true);
+        $("#submit-id-cancel_button").prop("disabled", true);
+        $('.form-horizontal').html('<img id="loader-img" alt="" src="http://adrian-design.com/images/loading.gif" width="100" height="100" align="center" />', 3000);
+        // setTimeout(function () {
+        //   $('#content').html('<img id="loader-img" alt=""
+        //     src="http://adrian-design.com/images/loading.gif"
+        //     width="100" height="100" align="center" />').addClass('border');
+        //                       }, 3000);
+        // alert('GO!');
       },
     'error': function(xhr, status, error){
         alert(error);
@@ -140,7 +148,8 @@ function initCreateStudentForm(form, modal) {
     },
 
     'success': function(data, status, xhr) {
-        alert('STOP');
+        // alert('STOP');
+
       var html = $(data), newform = html.find('#content-column form');
 
       // copy alert to modal window
@@ -158,6 +167,7 @@ function initCreateStudentForm(form, modal) {
         // reload after 2 seconds, so that user can read success message
         setTimeout(function(){location.reload(true);}, 500);
       }
+      $("#submit-id-add_button").prop("disabled", false);
     }
   });
 }
