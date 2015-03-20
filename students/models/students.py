@@ -2,10 +2,8 @@
 
 from django.db import models
 
-
 class Student(models.Model):
     """Student Model"""
-
     class Meta(object):
         verbose_name = u"Студент"
         verbose_name_plural = u"Студенти"
@@ -41,7 +39,8 @@ class Student(models.Model):
         blank=False,
         verbose_name=u"Білет")
 
-    student_group = models.ForeignKey('Group',
+    student_group = models.ForeignKey(
+        'Group',
         verbose_name=u"Група",
         blank=False,
         null=True,

@@ -30,7 +30,7 @@ function initJournal() {
 function initGroupSelector() {
   // look up select element with groups and attach our even handler
   // on field "change" event
-  $('#group-selector select').change(function(event){
+  $('#group-selector select').change(function(event) {
     // get value of currently selected group option
     var group = $(this).val();
 
